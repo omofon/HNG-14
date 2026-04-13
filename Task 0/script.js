@@ -1,7 +1,3 @@
-/**
- * - `getTimeRemaining(dueDate)` — returns friendly string, call it on load
- * - Checkbox `change` listener — strikes title, flips status to "Done"
- */
 // DOM Elements
 const checkbox = document.getElementById("toggle-completed");
 const title = document.querySelector('[data-testid="test-todo-title"]');
@@ -17,6 +13,7 @@ checkbox.addEventListener("change", (event) => {
   if (event.target.checked) {
     console.log("Checked");
     title.style.textDecoration = "line-through";
+    // Change status to "Done"
   } else {
     console.log("Not checked");
     title.style.textDecoration = "none";

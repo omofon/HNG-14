@@ -5,46 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo Card</title>
     <link href="/src/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-gray-200 flex items-center justify-center p-5">
+  <body>
     <!-- Todo Card -->
-    <article data-testid="test-todo-card">
-      <input
-        type="checkbox"
-        id="toggle-completed"
-        name="toggle-completed"
-        data-testid="test-todo-complete-toggle"
-        aria-label="Mark task as completed"
-      />
+    <article
+      data-testid="test-todo-card"
+      class="bg-base flex flex-col gap-10 justify-center p-1 rounded-2xl shadow-lg"
+    >
+      <section role="region">
+        <input
+          type="checkbox"
+          id="toggle-completed"
+          name="toggle-completed"
+          data-testid="test-todo-complete-toggle"
+          aria-label="Mark task as completed"
+        />
 
-      <h2 data-testid="test-todo-title">Design new landing page</h2>
+        <h2 data-testid="test-todo-title">Design new landing page</h2>
 
-      <p data-testid="test-todo-description">
-        Create wireframes and high-fidelity mockups for the product redesign.
-        Share with the team for review before handoff to development.
-      </p>
+        <p data-testid="test-todo-description">
+          Create wireframes and high-fidelity mockups for the product redesign.
+          Share with the team for review before handoff to development.
+        </p>
 
-      <span data-testid="test-todo-priority" aria-label="Priority: High"
-        >High</span
-      >
+        <span data-testid="test-todo-priority" aria-label="Priority: High"
+          >High</span
+        >
 
-      <time datetime="2026-04-16" data-testid="test-todo-due-date">
-        Due Apr 16, 2026
-      </time>
+        <time datetime="2026-04-16" data-testid="test-todo-due-date">
+          Due Apr 16, 2026
+        </time>
 
-      <span data-testid="test-todo-time-remaining" aria-live="polite">
-      </span>
+        <span data-testid="test-todo-time-remaining" aria-live="polite"> </span>
 
-      <span data-testid="test-todo-status" aria-label="Status: In Progress"
-        >In Progress</span
-      >
+        <span data-testid="test-todo-status" aria-label="Status: In Progress"
+          >In Progress</span
+        >
 
-      <ul role="list" data-testid="test-todo-tags">
-        <li data-testid="test-todo-tag-work">Work</li>
-        <li data-testid="test-todo-tag-urgent">Urgent</li>
-        <li>Design</li>
-      </ul>
-
+        <ul role="list" data-testid="test-todo-tags">
+          <li data-testid="test-todo-tag-work">Work</li>
+          <li data-testid="test-todo-tag-urgent">Urgent</li>
+          <li>Design</li>
+        </ul>
+      </section>
       <button data-testid="test-todo-edit-button" aria-label="Edit task">
         Edit
       </button>
