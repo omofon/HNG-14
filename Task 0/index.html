@@ -1,13 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="/src/output.css" rel="stylesheet">>
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Card</title>
+    <link href="/src/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-200 flex items-center justify-center p-5">
+    <!-- Todo Card -->
+    <article data-testid="test-todo-card">
+      <input
+        type="checkbox"
+        id="toggle-completed"
+        name="toggle-completed"
+        data-testid="test-todo-complete-toggle"
+        aria-label="Mark task as completed"
+      />
+
+      <h2 data-testid="test-todo-title">Design new landing page</h2>
+
+      <p data-testid="test-todo-description">
+        Create wireframes and high-fidelity mockups for the product redesign.
+        Share with the team for review before handoff to development.
+      </p>
+
+      <span data-testid="test-todo-priority" aria-label="Priority: High"
+        >High</span
+      >
+
+      <time datetime="2026-04-16" data-testid="test-todo-due-date">
+        Due Apr 16, 2026
+      </time>
+
+      <span data-testid="test-todo-time-remaining" aria-live="polite">
+      </span>
+
+      <span data-testid="test-todo-status" aria-label="Status: In Progress"
+        >In Progress</span
+      >
+
+      <ul role="list" data-testid="test-todo-tags">
+        <li data-testid="test-todo-tag-work">Work</li>
+        <li data-testid="test-todo-tag-urgent">Urgent</li>
+        <li>Design</li>
+      </ul>
+
+      <button data-testid="test-todo-edit-button" aria-label="Edit task">
+        Edit
+      </button>
+      <button data-testid="test-todo-delete-button" aria-label="Delete task">
+        Delete
+      </button>
+    </article>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
