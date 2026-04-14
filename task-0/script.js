@@ -16,16 +16,18 @@ const prevStatusClass = statusEl.className;
 checkbox.addEventListener("change", (event) => {
   if (event.target.checked) {
     title.classList.add("done");
-    checkbox.setAttribute("aria-label", "Mark task as incomplete");
+    statusEl.classList.remove(...prevStatusClass.split(" "));
+    statusEl.classList.add("status-done");
     statusEl.textContent = "Done";
     statusEl.setAttribute("aria-label", "Status: Done");
-    statusEl.classList.replace(prevStatusClass, "status-done");
+    checkbox.setAttribute("aria-label", "Mark task as incomplete");
   } else {
     title.classList.remove("done");
-    checkbox.setAttribute("aria-label", "Mark task as complete");
+    statusEl.classList.remove("status-done");
+    statusEl.classList.add(...prevStatusClass.split(" "));
     statusEl.textContent = prevStatus;
     statusEl.setAttribute("aria-label", prevStatusLabel);
-    statusEl.classList.replace("status-done", prevStatusClass);
+    checkbox.setAttribute("aria-label", "Mark task as completed");
   }
 });
 
