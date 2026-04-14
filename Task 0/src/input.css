@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  --color-page: #f0ede8;
+  /* Background color */
+  --color-page: hsl(220 69% 97%);
   --color-base: #f7f5f2;
   --color-card: #ffffff;
 
-  --color-title: #2c2c2a;
-  --color-body: #5f5e5a;
-  --color-muted: #888780;
+  /* Text colors */
+  --color-title: #1a1917;
+  --color-body: #3a3935;
+  --color-muted: #6b6a65;
+  --color-off-white: #faf8f5;
 
-  --color-priority-low-bg: #eaf3de;
-  --color-priority-low-text: #27500a;
-  --color-priority-med-bg: #faeeda;
-  --color-priority-med-text: #633806;
-  --color-priority-high-bg: #fcebeb;
-  --color-priority-high-text: #791f1f;
+  /* Priority  */
+  --color-priority-low: #3b6d11;
+  --color-priority-med: #f4720b;
+  --color-priority-high: #c0292a;
 
-  --color-btn-edit-bg: #e6f1fb;
-  --color-btn-edit-text: #0c447c;
-  --color-btn-delete-bg: #fcebeb;
-  --color-btn-delete-text: #791f1f;
+  /* Status */
+  --color-pending: #e08a00;
+  --color-progress: #2e86de;
+  --color-done: #3b6d11;
 
+  /* Edit button */
+  --color-edit: #2e86de;
+  --color-edit-hover: #5ba3e8;
+
+  /* Delete button */
+  --color-delete: #e63946;
+  --color-delete-hover: #ff6b74;
+
+  /* Font families */
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-inter: "Inter", sans-serif;
 }
@@ -33,7 +43,7 @@
   }
 
   body {
-    background-color: var(--color-bg-page);
+    background-color: var(--color-page);
     margin: 0;
     padding: 24px;
     font-family: var(--font-inter);
@@ -55,6 +65,34 @@
     cursor: pointer;
     border: none;
     font-family: var(--font-inter);
+  }
+
+  .done {
+    @apply line-through text-muted;
+  }
+
+  .high-priority {
+    @apply text-priority-high;
+  }
+
+  .medium-priority {
+    @apply text-priority-med;
+  }
+
+  .low-priority {
+    @apply text-priority-low;
+  }
+
+  .status-pending {
+    @apply bg-pending text-off-white px-2 py-3 rounded-full font-medium w-30 text-center;
+  }
+
+  .status-progress {
+    @apply bg-progress text-off-white px-2 py-3 rounded-full text-sm font-medium w-30 text-center;
+  }
+
+  .status-done {
+    @apply bg-done text-off-white px-2 py-3 text-sm rounded-full font-medium w-30 text-center;
   }
 
   * {

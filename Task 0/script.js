@@ -1,7 +1,7 @@
 // DOM Elements
 const checkbox = document.getElementById("toggle-completed");
 const title = document.querySelector('[data-testid="test-todo-title"]');
-const status = document.querySelector('[data-testid="test-todo-status"]');
+const statusEl = document.querySelector('[data-testid="test-todo-status"]');
 const timeEl = document.querySelector('[data-testid="test-todo-due-date"]');
 const timeLeft = document.querySelector(
   '[data-testid="test-todo-time-remaining"]',
@@ -9,14 +9,23 @@ const timeLeft = document.querySelector(
 
 const dueDate = new Date(timeEl.getAttribute("datetime"));
 
+const prevStatus = statusEl.textContent;
+const prevStatusLabel = statusEl.getAttribute("aria-label");
+const prevStatusClass = statusEl.className;
+
 checkbox.addEventListener("change", (event) => {
   if (event.target.checked) {
-    console.log("Checked");
-    title.style.textDecoration = "line-through";
-    // Change status to "Done"
+    title.classList.add("done");
+    checkbox.setAttribute("aria-label", "Mark task as incomplete");
+    statusEl.textContent = "Done";
+    statusEl.setAttribute("aria-label", "Status: Done");
+    statusEl.classList.replace(prevStatusClass, "status-done");
   } else {
-    console.log("Not checked");
-    title.style.textDecoration = "none";
+    title.classList.remove("done");
+    checkbox.setAttribute("aria-label", "Mark task as complete");
+    statusEl.textContent = prevStatus;
+    statusEl.setAttribute("aria-label", prevStatusLabel);
+    statusEl.classList.replace("status-done", prevStatusClass);
   }
 });
 
